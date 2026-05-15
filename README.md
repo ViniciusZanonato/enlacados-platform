@@ -1,135 +1,135 @@
 <div align="center">
 
-# Enlaçados
+# Enlacados
 
-**Plataforma acadêmica full-stack para gestão educacional**
+**Full-stack academic platform for educational management**
 
 [![React](https://img.shields.io/badge/React-18-61DAFB?style=flat-square&logo=react)](https://react.dev)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.8-3178C6?style=flat-square&logo=typescript)](https://www.typescriptlang.org)
 [![Vite](https://img.shields.io/badge/Vite-7-646CFF?style=flat-square&logo=vite)](https://vitejs.dev)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind-3-38BDF8?style=flat-square&logo=tailwindcss)](https://tailwindcss.com)
 [![Supabase](https://img.shields.io/badge/Supabase-PostgreSQL-3ECF8E?style=flat-square&logo=supabase)](https://supabase.com)
-[![CI](https://img.shields.io/github/actions/workflow/status/ViniciusZanonato/enlacados/ci.yml?style=flat-square&label=CI)](https://github.com/ViniciusZanonato/enlacados/actions)
+[![CI](https://img.shields.io/github/actions/workflow/status/ViniciusZanonato/enlacados-platform/ci.yml?style=flat-square&label=CI)](https://github.com/ViniciusZanonato/enlacados-platform/actions)
 
 </div>
 
 ---
 
-## Sobre
+## About
 
-Enlaçados é uma plataforma educacional completa que conecta alunos, professores e instituições de ensino. Centraliza gestão acadêmica, financeira e documental em portais específicos para cada perfil de usuário.
+Enlacados is a full-stack educational platform connecting students, teachers, and institutions. It centralizes academic, financial, and document management through role-specific portals.
 
-## Funcionalidades
+## Features
 
-### Portal do Aluno
-- Histórico acadêmico e grade curricular
-- Situação financeira e boletos
-- Solicitação e download de documentos
-- Registro de atividades complementares
+### Student Portal
+- Academic transcript and course grid
+- Financial status and billing
+- Document requests and downloads
+- Extracurricular activity tracking
 
-### Portal Institucional
-- Gestão de alunos (cadastro bulk via CSV/Excel)
-- CPA — Comissão Própria de Avaliação com relatórios automáticos
-- Exportação de relatórios em PDF e Excel
-- Dashboard com métricas em tempo real (Recharts)
+### Institutional Portal
+- Student management (bulk import via CSV/Excel)
+- CPA — Internal Evaluation Committee with automated reports
+- PDF and Excel report exports
+- Real-time metrics dashboard (Recharts)
 
-### Portal do Professor
-- Gestão de turmas e alunos
-- Blog acadêmico com editor integrado
+### Teacher Portal
+- Class and student management
+- Integrated academic blog editor
 
-### Infraestrutura
-- Autenticação JWT via Supabase Auth (email, magic link, OAuth)
-- Pagamentos com Stripe (webhooks via Vercel Functions)
-- Monitoramento de erros com Sentry
-- Testes E2E com Playwright
-- CI/CD automático via GitHub Actions → Vercel
+### Infrastructure
+- JWT authentication via Supabase Auth (email, magic link, OAuth)
+- Stripe payments with webhooks via Vercel Functions
+- Error monitoring with Sentry
+- End-to-end tests with Playwright
+- Automated CI/CD via GitHub Actions → Vercel
 
 ## Stack
 
-| Camada | Tecnologia |
-|--------|-----------|
+| Layer | Technology |
+|-------|-----------|
 | Frontend | React 18, TypeScript, Vite |
 | UI | Tailwind CSS, shadcn/ui, Radix UI |
-| Estado/Dados | TanStack Query, React Hook Form, Zod |
+| State / Data | TanStack Query, React Hook Form, Zod |
 | Backend | Supabase (PostgreSQL + Auth + Storage) |
-| Pagamentos | Stripe |
-| Monitoramento | Sentry |
-| Testes | Vitest, Playwright |
+| Payments | Stripe |
+| Monitoring | Sentry |
+| Testing | Vitest, Playwright |
 | Deploy | Vercel, GitHub Actions |
 
-## Estrutura do Projeto
+## Project Structure
 
 ```
 src/
-├── features/        # Módulos por domínio (auth, aluno, instituição, professor)
-├── pages/           # Páginas roteadas
-├── components/      # Componentes reutilizáveis
-├── lib/             # Clientes e utilitários (Supabase, Stripe, etc.)
+├── features/        # Domain modules (auth, student, institution, teacher)
+├── pages/           # Routed pages
+├── components/      # Reusable components
+├── lib/             # Clients and utilities (Supabase, Stripe, etc.)
 ├── hooks/           # Custom hooks
-└── types/           # Tipos TypeScript globais
+└── types/           # Global TypeScript types
 
 api/                 # Vercel Serverless Functions (Stripe webhooks, ingestion)
-supabase/            # Migrations e configuração local
-tests/               # Testes Playwright E2E
+supabase/            # Migrations and local config
+tests/               # Playwright E2E tests
 ```
 
-## Como Rodar Localmente
+## Running Locally
 
-**Pré-requisitos:** Node.js 20+, conta Supabase, conta Stripe (opcional)
+**Requirements:** Node.js 20+, Supabase account, Stripe account (optional)
 
 ```bash
-# 1. Clone o repositório
-git clone https://github.com/ViniciusZanonato/enlacados.git
-cd enlacados
+# 1. Clone the repository
+git clone https://github.com/ViniciusZanonato/enlacados-platform.git
+cd enlacados-platform
 
-# 2. Instale as dependências
+# 2. Install dependencies
 npm install
 
-# 3. Configure as variáveis de ambiente
+# 3. Set up environment variables
 cp env.example .env
-# Edite .env com suas chaves do Supabase
+# Edit .env with your Supabase keys
 
-# 4. Inicie o servidor de desenvolvimento
+# 4. Start the development server
 npm run dev
 ```
 
-A aplicação estará disponível em `http://localhost:5173`.
+App available at `http://localhost:5173`.
 
 ## Scripts
 
 ```bash
-npm run dev         # Servidor de desenvolvimento
-npm run build       # Build de produção
+npm run dev         # Development server
+npm run build       # Production build
 npm run lint        # ESLint
-npm run test        # Testes unitários (Vitest)
-npx playwright test # Testes E2E
+npm run test        # Unit tests (Vitest)
+npx playwright test # E2E tests
 ```
 
-## Configuração do Supabase
+## Supabase Setup
 
-1. Crie um projeto em [supabase.com](https://supabase.com)
-2. Copie a URL e a `anon key` para o `.env`
-3. Execute as migrations: `npx supabase db push`
-4. Configure Auth > URL Configuration com seu domínio
+1. Create a project at [supabase.com](https://supabase.com)
+2. Copy the URL and `anon key` into `.env`
+3. Run migrations: `npx supabase db push`
+4. Set Auth > URL Configuration to your domain
 
-Veja `env.example` para lista completa de variáveis necessárias.
+See `env.example` for the full list of required variables.
 
-## Deploy
+## Deployment
 
-Configurado para deploy automático na Vercel via GitHub Actions.
+Configured for automatic deployment to Vercel via GitHub Actions.
 
-Configure os secrets no repositório:
-- `VITE_SUPABASE_URL` e `VITE_SUPABASE_ANON_KEY`
+Set the following secrets in your repository:
+- `VITE_SUPABASE_URL` and `VITE_SUPABASE_ANON_KEY`
 - `SUPABASE_SERVICE_ROLE_KEY`
-- `STRIPE_SECRET_KEY` e `STRIPE_WEBHOOK_SECRET`
+- `STRIPE_SECRET_KEY` and `STRIPE_WEBHOOK_SECRET`
 - `VERCEL_TOKEN`, `VERCEL_ORG_ID`, `VERCEL_PROJECT_ID`
 
-## Licença
+## License
 
-MIT — veja [LICENSE](LICENSE) para detalhes.
+MIT — see [LICENSE](LICENSE) for details.
 
 ---
 
 <div align="center">
-  Desenvolvido por <a href="https://github.com/ViniciusZanonato">Vinicius Zanonato</a>
+  Built by <a href="https://github.com/ViniciusZanonato">Vinicius Zanonato</a>
 </div>

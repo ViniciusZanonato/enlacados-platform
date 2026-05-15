@@ -1,0 +1,324 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Dark Mode Colors */
+    --background: 240 10% 8%;
+    --foreground: 270 30% 95%;
+
+    --card: 240 10% 12%;
+    --card-foreground: 270 30% 95%;
+
+    --popover: 240 10% 12%;
+    --popover-foreground: 270 30% 95%;
+
+    --primary: 270 70% 65%;
+    --primary-foreground: 0 0% 100%;
+    --primary-glow: 280 80% 75%;
+
+    --secondary: 240 10% 18%;
+    --secondary-foreground: 270 30% 95%;
+
+    --muted: 240 10% 18%;
+    --muted-foreground: 270 20% 65%;
+
+    --accent: 280 70% 65%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 62.8% 50%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 240 10% 20%;
+    --input: 240 10% 20%;
+    --ring: 270 70% 65%;
+
+    --radius: 0.75rem;
+
+    /* ── Brand tokens ── */
+    --color-accent: 270 70% 65%;          /* violet-500 — acento único Enlaçados */
+    --color-accent-soft: 270 70% 65%;     /* usado com /10 opacity onde necessário */
+
+    /* ── Portal Estudante (light) ── */
+    --student-bg: 0 0% 98%;              /* zinc-50  */
+    --student-surface: 0 0% 100%;        /* white    */
+    --student-border: 240 5% 84%;        /* zinc-200 */
+
+    /* ── Portal Institucional (dark) ── */
+    --institutional-bg: 240 10% 4%;      /* zinc-950 */
+    --institutional-surface: 240 9% 9%;  /* zinc-900 */
+    --institutional-border: 240 5% 17%;  /* zinc-800 */
+
+    /* ── Tipografia ── */
+    --font-title-size: 1.5rem;           /* text-2xl */
+    --font-title-weight: 600;            /* font-semibold */
+    --font-title-tracking: -0.025em;     /* tracking-tight */
+    --font-section-size: 1rem;           /* text-base */
+    --font-section-weight: 500;          /* font-medium */
+    --font-body-size: 0.875rem;          /* text-sm */
+    --font-caption-size: 0.75rem;        /* text-xs */
+
+    /* ── Extremos tipográficos (distinctive-frontend) ── */
+    --weight-thin: 200;
+    --weight-black: 900;
+    --tracking-display: -0.04em;        /* headlines grandes */
+    --tracking-tight: -0.02em;
+    --tracking-wide: 0.08em;            /* all-caps labels */
+
+    /* ── Espaçamento ── */
+    --spacing-card: 1.5rem;             /* p-6  */
+    --spacing-section-gap: 1.5rem;      /* gap-6 */
+    --spacing-inner-gap: 0.75rem;       /* gap-3 */
+
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(270 70% 60%), hsl(280 80% 70%));
+    --gradient-hero: linear-gradient(135deg, hsl(270 70% 60%) 0%, hsl(280 80% 70%) 50%, hsl(290 75% 75%) 100%);
+    --gradient-subtle: linear-gradient(180deg, hsl(240 10% 8%) 0%, hsl(240 10% 12%) 100%);
+    --gradient-card: linear-gradient(135deg, hsl(240 10% 15%) 0%, hsl(240 10% 12%) 100%);
+    /* Mesh gradient – atmospheric depth */
+    --gradient-mesh:
+      radial-gradient(at 0% 0%,   hsl(270 80% 55% / 0.35) 0, transparent 55%),
+      radial-gradient(at 100% 0%, hsl(290 75% 65% / 0.25) 0, transparent 55%),
+      radial-gradient(at 50% 100%, hsl(250 70% 50% / 0.20) 0, transparent 55%),
+      hsl(240 10% 8%);
+    
+    /* Shadows */
+    --shadow-elegant: 0 10px 40px -10px hsl(270 70% 60% / 0.3);
+    --shadow-glow: 0 0 60px hsl(280 80% 70% / 0.4);
+    
+    /* Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 270 50% 8%;
+    --foreground: 270 30% 95%;
+
+    --card: 270 50% 10%;
+    --card-foreground: 270 30% 95%;
+
+    --popover: 270 50% 10%;
+    --popover-foreground: 270 30% 95%;
+
+    --primary: 270 70% 65%;
+    --primary-foreground: 0 0% 100%;
+    --primary-glow: 280 80% 75%;
+
+    --secondary: 270 40% 15%;
+    --secondary-foreground: 270 30% 95%;
+
+    --muted: 270 40% 15%;
+    --muted-foreground: 270 20% 60%;
+
+    --accent: 280 70% 70%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 62.8% 50%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 270 40% 20%;
+    --input: 270 40% 20%;
+    --ring: 270 70% 65%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Geist', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  }
+
+  code, kbd, pre, samp {
+    font-family: 'Geist Mono', 'Menlo', 'Monaco', 'Consolas', monospace;
+  }
+  
+  /* Hierarchy through weight contrast, not just size */
+  h1 {
+    font-weight: var(--weight-black);
+    letter-spacing: var(--tracking-display);
+  }
+  h2 {
+    font-weight: 800;
+    letter-spacing: var(--tracking-tight);
+  }
+  h3, h4, h5, h6 {
+    font-weight: 700;
+    letter-spacing: var(--tracking-tight);
+  }
+}
+
+@layer utilities {
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+  }
+
+  .gradient-primary {
+    background: var(--gradient-primary);
+  }
+  
+  .gradient-hero {
+    background: var(--gradient-hero);
+  }
+  
+  .gradient-text {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  .shadow-elegant {
+    box-shadow: var(--shadow-elegant);
+  }
+
+  .shadow-glow {
+    box-shadow: var(--shadow-glow);
+  }
+
+  .shadow-glow-purple {
+    box-shadow: 0 20px 60px -10px hsl(270 70% 60% / 0.5);
+  }
+
+  .shadow-glow-blue {
+    box-shadow: 0 20px 60px -10px hsl(220 80% 60% / 0.5);
+  }
+
+  .shadow-glow-indigo {
+    box-shadow: 0 20px 60px -10px hsl(245 75% 60% / 0.5);
+  }
+
+  .transition-smooth {
+    transition: var(--transition-smooth);
+  }
+
+  .transition-bounce {
+    transition: var(--transition-bounce);
+  }
+
+  /* Portal contexts — usa os tokens nomeados definidos em :root */
+  .portal-student {
+    --background: var(--student-bg);
+    --foreground: 240 10% 10%;
+    --card: var(--student-surface);
+    --card-foreground: 240 10% 10%;
+    --border: var(--student-border);
+    --muted: 240 6% 94%;
+    --muted-foreground: 240 6% 45%;
+    --primary: var(--color-accent);
+  }
+
+  .portal-institutional {
+    --background: var(--institutional-bg);
+    --foreground: 270 30% 95%;
+    --card: var(--institutional-surface);
+    --card-foreground: 270 30% 95%;
+    --border: var(--institutional-border);
+    --muted: 240 10% 12%;
+    --muted-foreground: 270 15% 55%;
+    --primary: var(--color-accent);
+  }
+
+  /* ── Atmospheric backgrounds ── */
+  .gradient-mesh {
+    background: var(--gradient-mesh);
+  }
+
+  .bg-noise::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    opacity: 0.04;
+    mix-blend-mode: overlay;
+    pointer-events: none;
+  }
+
+  /* ── Staggered entrance animations ── */
+  @keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(28px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes fadeInLeft {
+    from { opacity: 0; transform: translateX(-28px); }
+    to   { opacity: 1; transform: translateX(0); }
+  }
+
+  @keyframes scaleIn {
+    from { opacity: 0; transform: scale(0.92); }
+    to   { opacity: 1; transform: scale(1); }
+  }
+
+  .animate-fade-in-up   { animation: fadeInUp  0.7s cubic-bezier(0.16, 1, 0.3, 1) both; }
+  .animate-fade-in-left { animation: fadeInLeft 0.7s cubic-bezier(0.16, 1, 0.3, 1) both; }
+  .animate-scale-in     { animation: scaleIn    0.6s cubic-bezier(0.16, 1, 0.3, 1) both; }
+  .animate-fade-in      { animation: fadeInUp   0.5s cubic-bezier(0.16, 1, 0.3, 1) both; }
+
+  /* Stagger delays — apply alongside animate-* */
+  .stagger-1  { animation-delay: 0.05s; }
+  .stagger-2  { animation-delay: 0.12s; }
+  .stagger-3  { animation-delay: 0.20s; }
+  .stagger-4  { animation-delay: 0.28s; }
+  .stagger-5  { animation-delay: 0.36s; }
+  .stagger-6  { animation-delay: 0.44s; }
+
+  @media (prefers-reduced-motion: reduce) {
+    .animate-fade-in-up,
+    .animate-fade-in-left,
+    .animate-scale-in,
+    .animate-fade-in {
+      animation: none;
+      opacity: 1;
+    }
+  }
+
+  /* ── Label pill — thin weight + wide tracking ── */
+  .label-pill {
+    font-weight: var(--weight-thin);
+    letter-spacing: var(--tracking-wide);
+    text-transform: uppercase;
+    font-size: 0.7rem;
+  }
+}

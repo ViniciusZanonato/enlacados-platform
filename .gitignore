@@ -1,0 +1,120 @@
+# ============================================================
+# SITE E CÓDIGO DO PRODUTO — O QUE FICA NO GIT:
+#   src/  public/  index.html  package*.json  vite.config.ts
+#   tailwind/postcss/tsconfig/eslint/components.json  vercel.json
+#   backend-django/  python-core/  supabase/ (migrations+config)
+#   tests/  playwright.config.ts  .github/  README.md  *.example
+# ============================================================
+
+# --- Build & deps ---
+node_modules
+dist
+dist-ssr
+*.local
+
+# --- Logs ---
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# --- Environment variables (nunca commitar valores reais) ---
+.env
+.env.*
+!.env.example
+!env.example
+
+# --- Editor ---
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# --- Python tooling ---
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.venv/
+venv/
+env/
+ENV/
+backend-django/db.sqlite3
+backend-django/db.sqlite3-journal
+backend-django/staticfiles/
+backend-django/media/
+backend-django/.coverage
+backend-django/htmlcov/
+backend-django/.pytest_cache/
+python-core/__pycache__/
+
+# --- Supabase temp e migrations ---
+supabase/.temp/
+supabase/migrations/
+
+# --- Playwright runtime ---
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/
+/playwright/.auth/
+.playwright-mcp/
+
+# --- Vercel ---
+.vercel
+
+
+# ============================================================
+# FERRAMENTAS DE IA (apenas local — não são o produto)
+# ============================================================
+
+# Agent files
+.gemini
+.agents/
+
+# Claude Code — configs locais e skills instaladas
+.claude/
+.mcp.json
+skills/
+skills-lock.json
+
+# Vault Obsidian — base operacional dos agentes
+Claude Code/
+
+# Relatórios gerados automaticamente
+EXECUTIVE_REPORT.md
+
+# ============================================================
+# ECOSSISTEMA OPENCLAW / ZION (infraestrutura local)
+# Scripts, dashboards e ferramentas clonadas pelo clone_tools.ps1
+# ============================================================
+
+# Pasta raiz do ZION Control Center
+ZION-OpenClaw-Control-main/
+
+# Ferramentas clonadas pelo clone_tools.ps1
+Dashboards/
+Infrastructure/
+Monitoring/
+Memory/
+Discovery_Skills/
+Sales_CRM/
+Security/
+
+# Dados Docker do OpenClaw
+docker-data/
+
+# --- Arquivos lixo gerados localmente ---
+clear
+npx
+whatsapp-state.png
+*.handoff-bundle/
+*.zip

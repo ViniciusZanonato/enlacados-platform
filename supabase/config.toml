@@ -1,0 +1,17 @@
+project_id = "your-project-ref"
+
+[auth]
+# URL do site em produção — usada nos links de confirmação de email,
+# redefinição de senha e outros emails enviados pelo Supabase Auth.
+# IMPORTANTE: configurar também no dashboard: Auth > URL Configuration > Site URL
+site_url = "https://your-domain.com"
+
+# URLs permitidas para redirect após auth (OAuth, magic link, etc.)
+additional_redirect_urls = [
+  "https://your-domain.com",
+  "https://your-domain.com/portal",
+  "https://your-domain.com/auth",
+]
+
+[auth.email]
+enable_confirmations = true

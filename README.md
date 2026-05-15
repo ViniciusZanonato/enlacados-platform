@@ -131,5 +131,7 @@ MIT — see [LICENSE](LICENSE) for details.
 ---
 
 <div align="center">
-  Built by <a href="https://github.com/ViniciusZanonato">Vinicius Zanonato</a>
+  Built by <a href="https://viniciuszanonato.github.io">Vinicius Zanonato</a> &nbsp;·&nbsp;
+  <a href="https://github.com/ViniciusZanonato">GitHub</a> &nbsp;·&nbsp;
+  <a href="https://www.linkedin.com/in/carlos-vinicius-garcia-zanonato-453832346">LinkedIn</a>
 </div>
